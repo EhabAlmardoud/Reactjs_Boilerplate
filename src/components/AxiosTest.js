@@ -1,42 +1,38 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import instance from '../axios/instances'
+import errorHandler from '../axios/errorHandler.js'
 import { map, get } from 'lodash'
 
-export default class AxiosTest extends Component {
+class AxiosTest extends Component {
 
     state = {
-        posts: []
+        posts: [],
+        users: []
     }
 
     componentDidMount() {
-        axios.get('/posts', {
-            params: {
-                _limit: 10
-            }
-        })
-            .then(r => {
-                this.setState({ posts: r.data })
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        instance.get('', { params: { _limit: 10 } })
+            .then(r => { this.setState({ users: r.data }) })
+            .catch(error => { console.log(error) })
     }
 
-    renderData = () => {
-        const { posts } = this.state
-        return map(posts, (p) => {
+    renderData = (data) => {
+        return map(data, (p) => {
             return <p key={p.id}>{get(p, 'id', '')}</p>
         })
     }
 
     render() {
+        const {posts, users} = this.state
         return (
             <div>
-                Data returned from Axios:
                 <div>
-                    {this.renderData()}
+                    Data returned from Axios Instances:
+                    {this.renderData(users)}
                 </div>
             </div>
         )
     }
 }
+
+export default errorHandler(AxiosTest, instance)
