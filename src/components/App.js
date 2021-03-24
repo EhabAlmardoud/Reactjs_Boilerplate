@@ -2,6 +2,10 @@ import React, { Component } from "react"
 import { Switch, Route, NavLink } from 'react-router-dom'
 import FirstRoute from './FirstRoute'
 import AxiosTest from './AxiosTest'
+import axios from '../axios'
+
+// Handle the axios intercepters and defuaults (baseURL)
+axios
 
 // React Route using a <Switch> to to match the path and return the <Route>
 // Only Components loaded through <Route> have access for the history,location,match props 

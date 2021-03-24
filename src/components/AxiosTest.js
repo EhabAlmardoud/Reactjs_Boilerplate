@@ -9,7 +9,7 @@ export default class AxiosTest extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts', {
+        axios.get('/posts', {
             params: {
                 _limit: 10
             }
@@ -25,7 +25,7 @@ export default class AxiosTest extends Component {
     renderData = () => {
         const { posts } = this.state
         return map(posts, (p) => {
-            return <p>{get(p, 'id', '')}</p>
+            return <p key={p.id}>{get(p, 'id', '')}</p>
         })
     }
 
