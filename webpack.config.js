@@ -8,7 +8,7 @@ module.exports = {
         filename: 'index_bundle.js'
     },
     module: {
-        rules:[
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -18,7 +18,7 @@ module.exports = {
             }
         ]
     },
-    plugins:[
+    plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'
         })
