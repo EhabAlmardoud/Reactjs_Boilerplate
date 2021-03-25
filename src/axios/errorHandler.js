@@ -1,3 +1,4 @@
+// Used as a HOC (function) to handle the requests 
 import React, { Component } from 'react'
 
 const errorHandler = (WrappedComp, axiosInstance) => {

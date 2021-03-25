@@ -25,8 +25,3 @@ export default [
         }
     )
 ]
-
-//To use Instances of axios we creat it here and import "instance" after we export it
-// const instance = axios.create({
-//     baseURL = "https://jsonplaceholder.typicode.com"
-// })
