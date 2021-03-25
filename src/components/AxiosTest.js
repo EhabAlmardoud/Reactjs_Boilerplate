@@ -18,12 +18,13 @@ class AxiosTest extends Component {
 
     renderData = (data) => {
         return map(data, (p) => {
-            return <p key={p.id}>{get(p, 'id', '')}</p>
+            const id = get(p, 'id', '')
+            return <p key={id}>{id}</p>
         })
     }
 
     render() {
-        const {posts, users} = this.state
+        const { users } = this.state
         return (
             <div>
                 <div>

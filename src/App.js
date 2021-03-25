@@ -3,6 +3,8 @@ import { Switch, Route, NavLink } from 'react-router-dom'
 import FirstRoute from './components/FirstRoute'
 import AxiosTest from './components/AxiosTest'
 import globalAxios from './axios/axios.js'
+import './index.css'
+import styles from './styles.less'
 
 // Handle the axios intercepters and defuaults (baseURL)
 globalAxios
@@ -12,13 +14,13 @@ globalAxios
 class App extends Component {
     render() {
         return <div>
-            <h1>Welcome to my boilerplate!</h1>
+            <h1 className='main_cont'>Welcome to my boilerplate!</h1>
             <Switch>
                 <Route path='/firstRoute' component={FirstRoute} />
 
                 <Route path='/' >
                     <div>
-                        <h2>This is the home Page</h2>
+                        <h2 className={styles.text_test}>This is the home Page</h2>
                         <NavLink to='/firstRoute' activeClassName="hurray">
                             <h2>Go to the first route</h2>
                         </NavLink>
