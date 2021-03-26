@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 const NestedComp = (props) => {
 
     const handleClick = () => {
+        props.incOne()
         props.history.push('/')
     }
 
